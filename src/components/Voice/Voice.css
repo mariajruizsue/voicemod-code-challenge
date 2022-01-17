@@ -1,0 +1,55 @@
+
+.voice {
+  position: relative;
+  text-align: center;
+}
+
+.voice.active .voice-icon,
+.voice.active:hover .voice-icon {
+  background: var(--blue);
+}
+
+.voice.active .voice-name,
+.voice.active .voice-tag {
+  color: var(--blue);
+}
+
+.voice-fav-button {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  z-index: 1;
+}
+
+.voice:hover > .voice-fav-button{
+  display: block;
+}
+
+.voice-fav-button:hover ~ .select-button > .voice-icon {
+  background: var(--white);
+}
+
+.voice-fav-button:hover ~ .select-button {
+  color: var(--white);
+}
+
+.select-button {
+  background: none;
+  border: none;
+  color: var(--grey);
+  cursor: pointer;
+}
+
+.voice .select-button:hover {
+  color: var(--white);
+}
+
+.voice .select-button:hover > .voice-icon {
+  background: var(--white);
+}
+
+.voice .voice-icon {
+  background: var(--grey);
+  border-radius: 60px;
+}
