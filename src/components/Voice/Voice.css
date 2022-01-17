@@ -1,11 +1,10 @@
-
 .voice {
   position: relative;
   text-align: center;
 }
 
 .voice.active .voice-icon,
-.voice.active:hover .voice-icon {
+.voice.active:hover .select-button:hover > .voice-icon {
   background: var(--blue);
 }
 
@@ -22,7 +21,7 @@
   z-index: 1;
 }
 
-.voice:hover > .voice-fav-button{
+.voice:hover > .voice-fav-button {
   display: block;
 }
 
