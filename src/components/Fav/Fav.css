@@ -1,0 +1,15 @@
+.button-fav {
+  background: white;
+  border: 0;
+  border-radius: 100px;
+  cursor: pointer;
+  height: 30px;
+  transition: all .3s ease;
+  width: 30px;
+}
+
+.button-fav img {
+  display: block;
+  margin: auto;
+  width: 14px;
+}
