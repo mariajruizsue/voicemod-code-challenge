@@ -79,7 +79,7 @@
   font-weight: 500;
   justify-content: space-between;
   margin-left: 8px;
-  padding: 10px 18px;
+  padding: 10px 16px;
   position:relative;
   width: 160px;
 }
@@ -155,7 +155,7 @@
 @media (max-width: 650px) {
   .header {
     justify-content: center;
-    margin: 2vh 1vh;
+    margin: 2vh;
   }
 
   .search-voice {
@@ -178,7 +178,7 @@
   }
 
   .select {
-    width: 145px;
+    width: 140px;
   }
 
   .options li{
@@ -199,9 +199,9 @@
     margin: 2vh;
   }
   .select {
-    width: 26vh;
+    width: 24vh;
   }
   .options li{
-    width: 21vh;
+    width: 19vh;
   }
 }
