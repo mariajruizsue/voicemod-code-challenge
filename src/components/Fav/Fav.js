@@ -5,7 +5,7 @@ import './Fav.css'
 export function Fav ({ id, name, icon, tags }) {
   const [voices, setVoices] = useGlobalState("voices");
   const [voicesFav, setVoicesFav] = useGlobalState("voicesFav");
-  
+
   const handleClick = () => {
     if(voices.find( voice => voice.id === id) !== undefined){
       setVoicesFav(voicesFav.concat([{ id, name, icon, tags }]));

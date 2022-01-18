@@ -32,14 +32,15 @@
 }
 
 .search-input::-webkit-search-cancel-button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
   background: url(../../../public/assets/search-close.svg) no-repeat 50% 50%;
   background-size: cover;
   height: 16px;
   left: 35px;
   position:relative;
-  right: 0px;  
+  right: 0;
   width: 16px;
-  -webkit-appearance: none; 
 }
 .input-selectors{
   align-items: center;
@@ -87,9 +88,9 @@
 .options {
   cursor: pointer;
   position: absolute;
+  top: 63px;
   transform: translateY(-20px);
   transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
-  top: 63px;
   z-index: 1;
 }
 
@@ -122,8 +123,9 @@
 }
 
 .arrow-down-icon {
-  transform: rotate(180deg);
   -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .random-button {
@@ -168,7 +170,7 @@
   }
 
   .input-selectors {
-    gap: 0px;
+    gap: 0;
     justify-content: center;
   }
 
@@ -191,17 +193,21 @@
 }
 
 @media (max-width: 500px) {
+  .header {
+    justify-content: flex-start;
+  }
+
   .input-selectors {
     flex-direction: column;
-    justify-content: left;
+    justify-content: flex-start;
   }
   .random-selection {
     margin: 2vh;
   }
   .select {
-    width: 24vh;
+    width: 20vh;
   }
   .options li{
-    width: 19vh;
+    width: 16vh;
   }
 }

@@ -699,7 +699,7 @@ store.setState("voices", [
     ]
   }
 ]);
-store.setState("voicesFav", [ 
+store.setState("voicesFav", [
   {
     id: "aphonic",
     name: "Aphonic",
@@ -707,7 +707,7 @@ store.setState("voicesFav", [
     tags: [
       "human"
     ]
-  }, 
+  },
   {
     id: "2x1",
     name: "2x1",

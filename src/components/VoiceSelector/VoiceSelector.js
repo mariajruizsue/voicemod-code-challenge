@@ -77,7 +77,7 @@ export function VoiceSelector ({ voices, voicesFav }) {
       voice.name.toLowerCase().includes(searchVoice.toLowerCase())
     );
     if (tagSelected !== 'All') {
-      results = results.filter(voice => 
+      results = results.filter(voice =>
           voice.tags.includes(tagSelected.toLowerCase())
       );
     }
@@ -85,7 +85,7 @@ export function VoiceSelector ({ voices, voicesFav }) {
       voice.name.toLowerCase().includes(searchVoice.toLowerCase())
     );
     if (tagSelected !== 'All') {
-      resultsFav = resultsFav.filter(voice => 
+      resultsFav = resultsFav.filter(voice =>
           voice.tags.includes(tagSelected.toLowerCase())
       );
     }
@@ -124,7 +124,7 @@ export function VoiceSelector ({ voices, voicesFav }) {
         type="search"
         />
         <img className="input-icon" loading='lazy' alt="Search icon" src="../assets/search.svg"/>
-      </div> 
+      </div>
       <div className='input-selectors'>
         <div className='dropdown filter'>
           <img className="dropdown-icon" loading='lazy' alt="Filter icon" src="../assets/filter.svg"/>
@@ -134,14 +134,14 @@ export function VoiceSelector ({ voices, voicesFav }) {
               type="button"
               value={buttonTextFilter}>
               <span>{buttonTextFilter}</span>
-              { isActiveFilter === true ? 
-              <img className="arrow-down-icon" loading='lazy' alt="Arrow icon" src="../assets/select-arrow.svg"/> 
-              : 
-              <img className="arrow-up-icon" loading='lazy' alt="Arrow icon" src="../assets/select-arrow.svg"/> 
+              { isActiveFilter === true ?
+              <img className="arrow-down-icon" loading='lazy' alt="Arrow icon" src="../assets/select-arrow.svg"/>
+              :
+              <img className="arrow-up-icon" loading='lazy' alt="Arrow icon" src="../assets/select-arrow.svg"/>
               }
             </button>
           </div>
-          {isActiveFilter ? 
+          {isActiveFilter ?
           <div ref={dropdownFilter} className="options">
             <ul>
             {
@@ -163,14 +163,14 @@ export function VoiceSelector ({ voices, voicesFav }) {
               type="button"
               value={buttonTextShort}>
               <span>{buttonTextShort}</span>
-              { isActiveShort === true ? 
-              <img className="arrow-down-icon" loading='lazy' alt="Arrow icon" src="../assets/select-arrow.svg"/> 
-              : 
-              <img className="arrow-up-icon" loading='lazy' alt="Arrow icon" src="../assets/select-arrow.svg"/> 
+              { isActiveShort === true ?
+              <img className="arrow-down-icon" loading='lazy' alt="Arrow icon" src="../assets/select-arrow.svg"/>
+              :
+              <img className="arrow-up-icon" loading='lazy' alt="Arrow icon" src="../assets/select-arrow.svg"/>
               }
             </button>
           </div>
-          {isActiveShort ? 
+          {isActiveShort ?
           <div ref={dropdownShort} className="options">
             <ul>
               <li onClick={() => onClickOrder("Acending")}>Ascending</li>
@@ -183,10 +183,10 @@ export function VoiceSelector ({ voices, voicesFav }) {
         </div>
         <div className='random-selection'>
           <button className='random-button' onClick={handlerClickRandom}>
-            <img className="random-icon" loading='lazy' alt="Random icon" src="../assets/button-random.svg"/> 
+            <img className="random-icon" loading='lazy' alt="Random icon" src="../assets/button-random.svg"/>
           </button>
         </div>
-      </div> 
+      </div>
 
     </div>
     <div className='voices-list'>

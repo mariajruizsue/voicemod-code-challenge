@@ -13,9 +13,9 @@ export function Voice ({ id, name, icon, tags }) {
   }
 
   return (
-    <div className={`voice 
+    <div className={`voice
     ${voiceSelected.id === id ? 'active' : 'inactive'}`}>
-      <div className='voice-fav-button'> 
+      <div className='voice-fav-button'>
         <Fav id={id} name={name} icon={icon} tags={tags}></Fav>
       </div>
       <button className='select-button' onClick={handlerClick}>
