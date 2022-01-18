@@ -23,7 +23,7 @@ export function Fav ({ id, name, icon, tags }) {
     : ["../assets/voice-favourite-off.svg"]
 
   return (
-    <button className='button-fav' onClick={handleClick}>
+    <button aria-label="Select fav" className='button-fav' onClick={handleClick}>
       <img loading='lazy' alt="Like icon" src={emoji}/>
     </button>
   )

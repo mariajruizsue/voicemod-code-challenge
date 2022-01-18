@@ -18,7 +18,7 @@ export function Voice ({ id, name, icon, tags }) {
       <div className='voice-fav-button'>
         <Fav id={id} name={name} icon={icon} tags={tags}></Fav>
       </div>
-      <button className='select-button' onClick={handlerClick}>
+      <button aria-label="Select voice" className='select-button' onClick={handlerClick}>
         <img className='voice-icon' loading='lazy' alt={`Icon ${name}`} src={`../assets/${icon}`} />
         <h4 className="voice-name">{name}</h4>
       </button>

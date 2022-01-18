@@ -119,6 +119,7 @@ export function VoiceSelector ({ voices, voicesFav }) {
       <div className='header'>
         <div className='search-voice'>
           <input
+            aria-label="search"
             className="search-input"
             onChange={handleChange}
             value={searchVoice}
@@ -132,6 +133,7 @@ export function VoiceSelector ({ voices, voicesFav }) {
             <div className='dropdown-input'>
               <button onClick={onClickFilterDropdown}
                 className="select"
+                aria-label="Select dropdown"
                 type="button"
                 value={buttonTextFilter}>
                 <span>{buttonTextFilter}</span>
@@ -160,6 +162,7 @@ export function VoiceSelector ({ voices, voicesFav }) {
             <img className="dropdown-icon" loading='lazy' alt="Filter icon" src="../assets/order.svg"/>
             <div className='dropdown-input'>
               <button onClick={onClickShortDropdown}
+                aria-label="Select dropdown"
                 className="select"
                 type="button"
                 value={buttonTextShort}>
@@ -183,7 +186,7 @@ export function VoiceSelector ({ voices, voicesFav }) {
             }
           </div>
           <div className='random-selection'>
-            <button className='random-button' onClick={handlerClickRandom}>
+            <button aria-label="Select random voice" className='random-button' onClick={handlerClickRandom}>
               <img className="random-icon" loading='lazy' alt="Random icon" src="../assets/button-random.svg"/>
             </button>
           </div>
