@@ -1,6 +1,6 @@
-import { store } from 'state-pool'
+import { store } from "state-pool"
 
-store.setState("voiceSelected", []);
+store.setState("voiceSelected", [])
 store.setState("voices", [
   {
     id: "8bits",
@@ -191,7 +191,7 @@ store.setState("voices", [
     name: "Custom",
     icon: "VoicesVoiceIcon02.png",
     tags: [
-        "misc"
+      "misc"
     ]
   },
   {
@@ -207,7 +207,7 @@ store.setState("voices", [
     name: "Cybertune",
     icon: "VoicesVoiceIcon01.png",
     tags: [
-        "misc"
+      "misc"
     ]
   },
   {
@@ -415,7 +415,7 @@ store.setState("voices", [
     name: "Orbital",
     icon: "VoicesVoiceIcon01.png",
     tags: [
-        "misc"
+      "misc"
     ]
   },
   {
@@ -447,7 +447,7 @@ store.setState("voices", [
     name: "Police bot",
     icon: "VoicesVoiceIcon02.png",
     tags: [
-        "misc"
+      "misc"
     ]
   },
   {
@@ -698,7 +698,7 @@ store.setState("voices", [
       "horror"
     ]
   }
-]);
+])
 store.setState("voicesFav", [
   {
     id: "aphonic",
@@ -716,6 +716,6 @@ store.setState("voicesFav", [
       "misc"
     ]
   }
-]);
+])
 
-store.setState("tags", ['All', 'Human', 'Devices', 'Robotic', 'Misc']);
+store.setState("tags", ["All", "Human", "Devices", "Robotic", "Misc"])

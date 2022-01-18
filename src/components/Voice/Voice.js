@@ -1,20 +1,20 @@
-import React from 'react'
-import { useGlobalState } from 'state-pool'
+import React from "react"
+import { useGlobalState } from "state-pool"
 import { Fav } from "../Fav/Fav"
 
-import './Voice.css'
+import "./Voice.css"
 
 
 export function Voice ({ id, name, icon, tags }) {
-  const [voiceSelected, setVoiceSelected] = useGlobalState("voiceSelected");
+  const [voiceSelected, setVoiceSelected] = useGlobalState("voiceSelected")
 
   const handlerClick = () => {
-    setVoiceSelected({ id, name, icon, tags });
+    setVoiceSelected({ id, name, icon, tags })
   }
 
   return (
     <div className={`voice
-    ${voiceSelected.id === id ? 'active' : 'inactive'}`}>
+    ${voiceSelected.id === id ? "active" : "inactive"}`}>
       <div className='voice-fav-button'>
         <Fav id={id} name={name} icon={icon} tags={tags}></Fav>
       </div>
@@ -24,4 +24,4 @@ export function Voice ({ id, name, icon, tags }) {
       </button>
     </div>
   )
-};
+}

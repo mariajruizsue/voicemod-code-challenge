@@ -1,12 +1,13 @@
-import { useGlobalState } from 'state-pool'
+import React from "react"
+import { useGlobalState } from "state-pool"
 import { VoiceSelector } from "./components/VoiceSelector/VoiceSelector"
-import './resources/GlobalState'
+import "./resources/GlobalState"
 
-import './App.css';
+import "./App.css"
 
 export default function App() {
-  const [voices] = useGlobalState("voices");
-  const [voicesFav] = useGlobalState("voicesFav");
+  const [voices] = useGlobalState("voices")
+  const [voicesFav] = useGlobalState("voicesFav")
 
   return (
     <>
@@ -14,6 +15,6 @@ export default function App() {
         <VoiceSelector voices={voices} voicesFav={voicesFav} />
       </div>
     </>
-  );
+  )
 }
 

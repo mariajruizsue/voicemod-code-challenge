@@ -1,11 +1,11 @@
-import React from 'react'
-import '@testing-library/jest-dom/extend-expect'
-import { render, fireEvent, waitFor } from '@testing-library/react'
-import '../../resources/GlobalState'
-import { VoiceSelector } from './VoiceSelector'
+import React from "react"
+import "@testing-library/jest-dom/extend-expect"
+import { render, fireEvent, waitFor } from "@testing-library/react"
+import "../../resources/GlobalState"
+import { VoiceSelector } from "./VoiceSelector"
 
 
-describe('<VoiceSelector />' , () => {
+describe("<VoiceSelector />" , () => {
 
   let voices =
   [{
@@ -63,18 +63,18 @@ describe('<VoiceSelector />' , () => {
   let voicesFavEmpty = []
 
 
-  test('clicking open dropdown options', async () => {
+  test("clicking open dropdown options", async () => {
     render(<VoiceSelector voices={voices} voicesFav={voicesFav} />)
-    const dropdownEl = document.querySelector('.select')
+    const dropdownEl = document.querySelector(".select")
 
     fireEvent.click(dropdownEl)
-    await waitFor(() => expect(document.querySelector('.options')).not.toBeNull())
+    await waitFor(() => expect(document.querySelector(".options")).not.toBeNull())
 
   })
 
-  test('do not render voiceOfList if is empty', () => {
+  test("do not render voiceOfList if is empty", () => {
     render(<VoiceSelector voices={voicesEmpty} voicesFav={voicesFavEmpty} />)
-    expect(document.querySelector('.voices-section')).toBeNull()
+    expect(document.querySelector(".voices-section")).toBeNull()
   })
 
 })

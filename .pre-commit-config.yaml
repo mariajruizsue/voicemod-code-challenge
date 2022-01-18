@@ -31,13 +31,8 @@ repos:
     hooks:
       - id: htmllint
         name: HTML linter
-  # - repo: https://github.com/pre-commit/mirrors-csslint
-  #   rev: v1.0.5
-  #   hooks:
-  #     - id: csslint
-  #       name: CSS linter
-  # - repo: https://github.com/pre-commit/mirrors-eslint
-  #   rev: v7.25.0
-  #   hooks:
-  #     - id: eslint
-  #       name: ECMAScript linter
+  - repo: https://github.com/pre-commit/mirrors-eslint
+    rev: v8.7.0
+    hooks:
+      - id: eslint
+        name: ECMAScript linter

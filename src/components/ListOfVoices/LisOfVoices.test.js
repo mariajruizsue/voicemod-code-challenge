@@ -1,11 +1,11 @@
-import React from 'react'
-import '@testing-library/jest-dom/extend-expect'
-import { render } from '@testing-library/react'
-import '../../resources/GlobalState'
-import { ListOfVoices } from './ListOfVoices'
+import React from "react"
+import "@testing-library/jest-dom/extend-expect"
+import { render } from "@testing-library/react"
+import "../../resources/GlobalState"
+import { ListOfVoices } from "./ListOfVoices"
 
 
-describe('<ListOfVoices />' , () => {
+describe("<ListOfVoices />" , () => {
 
   let voices =
   [{
@@ -37,8 +37,8 @@ describe('<ListOfVoices />' , () => {
     render(<ListOfVoices voices={voices} />)
   })
 
-  test('component renders content voice of list', () => {
-    const voiceList = document.querySelectorAll('.voice')
+  test("component renders content voice of list", () => {
+    const voiceList = document.querySelectorAll(".voice")
 
     expect(voiceList.length).toBe(voices.length)
   })

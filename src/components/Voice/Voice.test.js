@@ -1,10 +1,10 @@
-import React from 'react'
-import '@testing-library/jest-dom/extend-expect'
-import { render, fireEvent, waitFor } from '@testing-library/react'
-import '../../resources/GlobalState'
-import { Voice } from './Voice'
+import React from "react"
+import "@testing-library/jest-dom/extend-expect"
+import { render, fireEvent, waitFor } from "@testing-library/react"
+import "../../resources/GlobalState"
+import { Voice } from "./Voice"
 
-describe('<Voices />' , () => {
+describe("<Voices />" , () => {
   let component
 
   let voice = {
@@ -17,21 +17,21 @@ describe('<Voices />' , () => {
   }
 
   beforeEach(() => {
-     component = render(<Voice id={voice.id} name={voice.name} icon={voice.icon} tags={voice.tags} />)
+    component = render(<Voice id={voice.id} name={voice.name} icon={voice.icon} tags={voice.tags} />)
   })
 
-  test('component renders content', () => {
-    const voiceIcon = document.querySelector('.voice-icon')
+  test("component renders content", () => {
+    const voiceIcon = document.querySelector(".voice-icon")
 
     expect(component.container).toHaveTextContent(voice.name)
-    expect(voiceIcon).toHaveAttribute('src', `../assets/${voice.icon}`)
+    expect(voiceIcon).toHaveAttribute("src", `../assets/${voice.icon}`)
   })
 
-  test('clicking for select a voice', async () => {
-    const button = document.querySelector('.select-button')
+  test("clicking for select a voice", async () => {
+    const button = document.querySelector(".select-button")
 
     fireEvent.click(button)
-    await waitFor(() => expect(component.container.firstChild).toHaveClass('active'))
+    await waitFor(() => expect(component.container.firstChild).toHaveClass("active"))
   })
 
 })
