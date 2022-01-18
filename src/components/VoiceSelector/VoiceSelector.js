@@ -191,7 +191,7 @@ export function VoiceSelector ({ voices, voicesFav }) {
     </div>
     <div className='voices-list'>
     { searchResultsFav.length > 0 ?
-      <div className='voices-fav'>
+      <div className='voices-section'>
         <h2>Favourite Voices</h2>
         <ListOfVoices key={voicesFav.id} voices={searchResultsFav}/>
       </div>
@@ -199,7 +199,7 @@ export function VoiceSelector ({ voices, voicesFav }) {
       <></>
     }
     { searchResults.length > 0 ?
-      <div className='voices-pro'>
+      <div className='voices-section'>
         <h2>Pro Voices</h2>
         <ListOfVoices key={voices.id} voices={searchResults}/>
       </div>

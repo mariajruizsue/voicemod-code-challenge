@@ -1,12 +1,13 @@
 import React from 'react'
 import '@testing-library/jest-dom/extend-expect'
-import { render, fireEvent, waitFor } from '@testing-library/react'
+import { render } from '@testing-library/react'
 import '../../resources/GlobalState'
-
 import { ListOfVoices } from './ListOfVoices'
 
-test('renders content voice of list', () => {
-  const voices =
+
+describe('<ListOfVoices />' , () => {
+
+  let voices =
   [{
     id: "8bits",
     name: "8bits",
@@ -32,9 +33,14 @@ test('renders content voice of list', () => {
     ]
   }]
 
-  const view = render(<ListOfVoices voices={voices} />)
-  const VoiceList = document.querySelectorAll('.voice')
+  beforeEach(() => {
+    render(<ListOfVoices voices={voices} />)
+  })
 
+  test('component renders content voice of list', () => {
+    const voiceList = document.querySelectorAll('.voice')
 
-  expect(VoiceList.length).toBe(voices.length)
+    expect(voiceList.length).toBe(voices.length)
+  })
 })
+
