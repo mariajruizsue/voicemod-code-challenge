@@ -1,4 +1,4 @@
-import { store } from 'state-pool';
+import { store } from 'state-pool'
 
 store.setState("voiceSelected", []);
 store.setState("voices", [

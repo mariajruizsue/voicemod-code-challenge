@@ -1,6 +1,6 @@
 import React from 'react'
-import { useGlobalState } from 'state-pool';
-import { Fav } from "../Fav/Fav";
+import { useGlobalState } from 'state-pool'
+import { Fav } from "../Fav/Fav"
 
 import './Voice.css'
 

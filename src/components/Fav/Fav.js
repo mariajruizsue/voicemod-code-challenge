@@ -1,5 +1,5 @@
 import React from 'react'
-import { useGlobalState } from 'state-pool';
+import { useGlobalState } from 'state-pool'
 import './Fav.css'
 
 export function Fav ({ id, name, icon, tags }) {

@@ -1,6 +1,6 @@
-import { useGlobalState, store } from 'state-pool';
-import { VoiceSelector } from "./components/VoiceSelector/VoiceSelector";
-import './resources/GlobalState';
+import { useGlobalState } from 'state-pool'
+import { VoiceSelector } from "./components/VoiceSelector/VoiceSelector"
+import './resources/GlobalState'
 
 import './App.css';
 

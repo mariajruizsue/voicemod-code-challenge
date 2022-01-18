@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useGlobalState } from 'state-pool';
-import { ListOfVoices } from "../ListOfVoices/ListOfVoices";
+import React, { useState, useEffect, useRef } from 'react'
+import { useGlobalState } from 'state-pool'
+import { ListOfVoices } from "../ListOfVoices/ListOfVoices"
 
 import './VoiceSelector.css'
 

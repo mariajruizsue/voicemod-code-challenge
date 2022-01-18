@@ -1,5 +1,5 @@
 import React from 'react'
-import { Voice } from "../Voice/Voice";
+import { Voice } from "../Voice/Voice"
 import './ListOfVoices.css'
 
 export function ListOfVoices ({voices}) {
