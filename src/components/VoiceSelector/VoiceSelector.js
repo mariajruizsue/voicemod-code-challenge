@@ -12,6 +12,7 @@ export function VoiceSelector ({ voices, voicesFav }) {
   const [searchResultsFav, setSearchResultsFav] = useState([]);
 
   const [voiceSelected, setVoiceSelected] = useGlobalState("voiceSelected");
+  const [currentOrder, setCurrentOrder] = useState("Acending");
 
   const [tags] = useGlobalState("tags");
   const [tagSelected, setTagSelected] = useState("All");
@@ -45,43 +46,13 @@ export function VoiceSelector ({ voices, voicesFav }) {
     if (isActiveShort) {
       window.addEventListener('click', pageClickEvent);
     }
-
-    const applyFilters = () => {
-      let results = voices.filter(voice =>
-        voice.name.toLowerCase().includes(searchVoice.toLowerCase())
-      );
-      if (tagSelected !== 'All') {
-        results = results.filter(voice => 
-            voice.tags.includes(tagSelected.toLowerCase())
-        );
-      }
-      let resultsFav = voicesFav.filter(voice =>
-        voice.name.toLowerCase().includes(searchVoice.toLowerCase())
-      );
-      if (tagSelected !== 'All') {
-        resultsFav = resultsFav.filter(voice => 
-            voice.tags.includes(tagSelected.toLowerCase())
-        );
-      }
-      setSearchResultsFav(resultsFav);
-      setSearchResults(results);
-    }
     applyFilters();
 
     return () => {
       window.removeEventListener('click', pageClickEvent);
     }
 
-  }, [searchVoice, voices, voicesFav, isActiveFilter, isActiveShort, dropdownFilter, dropdownShort, tagSelected]);
-
-  const handleChange = e => {
-    setSearchVoice(e.target.value);
-  };
-
-  function onClickFilter(tag) {
-    setButtonTextFilter(tag);
-    setTagSelected(tag);
-  }
+  }, [searchVoice, voices, voicesFav, isActiveFilter, isActiveShort, dropdownFilter, dropdownShort, tagSelected, currentOrder]);
 
   const arrayOrder = (array, orderFactor) => {
     return array.sort(function(a, b){
@@ -95,12 +66,45 @@ export function VoiceSelector ({ voices, voicesFav }) {
     });
   }
 
+  const applyOrder = (array) => {
+    let orderFactor = 1;
+    if(currentOrder === "Descending") orderFactor *= -1;
+     return arrayOrder(array,orderFactor);
+  }
+
+  const applyFilters = () => {
+    let results = voices.filter(voice =>
+      voice.name.toLowerCase().includes(searchVoice.toLowerCase())
+    );
+    if (tagSelected !== 'All') {
+      results = results.filter(voice => 
+          voice.tags.includes(tagSelected.toLowerCase())
+      );
+    }
+    let resultsFav = voicesFav.filter(voice =>
+      voice.name.toLowerCase().includes(searchVoice.toLowerCase())
+    );
+    if (tagSelected !== 'All') {
+      resultsFav = resultsFav.filter(voice => 
+          voice.tags.includes(tagSelected.toLowerCase())
+      );
+    }
+    setSearchResultsFav(applyOrder(resultsFav));
+    setSearchResults(applyOrder(results));
+  }
+
+  const handleChange = e => {
+    setSearchVoice(e.target.value);
+  };
+
+  function onClickFilter(tag) {
+    setButtonTextFilter(tag);
+    setTagSelected(tag);
+  }
+
   function onClickOrder (order) {
     setButtonTextShort(order);
-    let orderFactor = 1;
-    if(order === "Descending") orderFactor *= -1;
-    setSearchResults(arrayOrder(searchResults,orderFactor));
-    setSearchResultsFav(arrayOrder(searchResultsFav,orderFactor));
+    setCurrentOrder(order);
   }
 
   const handlerClickRandom = () => {
