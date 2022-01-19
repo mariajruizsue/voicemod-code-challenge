@@ -4,7 +4,6 @@ import { render, fireEvent, waitFor } from "@testing-library/react"
 import "../../resources/GlobalState"
 import { VoiceSelector } from "./VoiceSelector"
 
-
 describe("<VoiceSelector />" , () => {
 
   let voices =
@@ -75,6 +74,31 @@ describe("<VoiceSelector />" , () => {
   test("do not render voiceOfList if is empty", () => {
     render(<VoiceSelector voices={voicesEmpty} voicesFav={voicesFavEmpty} />)
     expect(document.querySelector(".voices-section")).toBeNull()
+  })
+
+  test("searching a existing voice filters by name", async () => {
+    const searchText = voices[0].name
+    render(<VoiceSelector voices={voices} voicesFav={voicesFav} />)
+    const inputSearch = document.querySelector(".search-input")
+
+    fireEvent.change(inputSearch, {target: {value: searchText}})
+
+    const voiceNames = document.querySelectorAll(".voice-name")
+    await waitFor(() => expect(voiceNames.length).not.toEqual(0))
+    await waitFor(() => voiceNames.forEach(element => {
+      expect(element.innerHTML).toContain(searchText)
+    }))
+  })
+
+  test("searching a non existing voice should return empty list", async () => {
+    const searchText = "jhvdsjhfgeir7tey975g4urhtib5hiuh"
+    render(<VoiceSelector voices={voices} voicesFav={voicesFav} />)
+    const inputSearch = document.querySelector(".search-input")
+
+    fireEvent.change(inputSearch, {target: {value: searchText}})
+
+    const voiceNames = document.querySelectorAll(".voice-name")
+    await waitFor(() => expect(voiceNames.length).toEqual(0))
   })
 
 })
